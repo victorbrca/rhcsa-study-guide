@@ -2,8 +2,8 @@
 
 **📌 EXAM TIPs**
 
-- Check if 'bash-completion' is installed. If it's not, install it
-- Use 'man nmcli-examples' to get usage examples
+- Check if `bash-completion` is installed. If it's not, install it
+- Use `man nmcli-examples` to get usage examples
 
 ## Nmcli - NetworkManager Command Line Interface  
 
@@ -12,6 +12,47 @@ nmcli is a command-line tool for controlling NetworkManager and reporting networ
 Nmcli allows you to use shorthand for the commands:
 
 ![](7a-configure-ipv4-and-ipv6-addresses/7a-configure-ipv4-and-ipv6-addresses-424ae.png)
+
+### Notes About Making changes
+
+#### Connection Changes
+
+After making changes to a connection (adding IP, removing IP, adding DNS, etc.), you will need to restart the connection (or NetworkManager) for the changes to take effect. There are a few ways you can do that.
+
+Restart the connectio with `ifup` and `ifdown`
+
+    # ifdown [conn-name] ; ifup [conn-name]
+
+Restart the connection with `nmcli`
+
+    # nmcli connection down [conn-name] ; nmcli connection up [conn-name]
+
+You can also restart NetworkManager, however this will restart all connections
+
+    # systemctl restart NetworkManager
+
+#### Adding Removing Connections
+
+Adding removing connections will apply the changes in real-time.
+
+When removing a connection, if another connection is configured with `autoconnect yes` for the same interface, it will come up as soon as the connection is deleted.
+
+#### `ip4` vs `ipv4`
+
+when creating a new connection it's ok to use `ip4`. However, when modifying existing connections you might want to use `ipv4.addresses` (depending on your goal).
+
+    Table 25. IPv4 options
+    ┌──────┬────────────────┬────────────────────────┐
+    │Alias │ Property       │ Note                   │
+    ├──────┼────────────────┼────────────────────────┤
+    │ip4   │ ipv4.addresses │ The alias is           │
+    │      │ ipv4.method    │ equivalent to the      │
+    │      │                │ +ipv4.addresses syntax │
+    │      │                │ and also sets          │
+    │      │                │ ipv4.method to manual. │
+    │      │                │ It can be specified    │
+    │      │                │ multiple times.        │
+    ├──────┼────────────────┼────────────────────────┤
 
 ### Viewing Connections
 
@@ -101,18 +142,19 @@ Show information for device
 
 ### Adding New Connections
 
+A connection is "active" when a device uses that connection's configuration to create or connect to a network. There may be multiple connections that apply to a device, but only one of them can be active on that device at any given time. The additional connections can be used to allow quick switching between different networks and configurations.
+
 DHCP
 
-    # nmcli con add con-name [connection name] autoconnect no type ethernet ifname eth1
+    # nmcli con add con-name [connection name] method auto type ethernet ifname eth1
 
 Static IP
 
-    # nmcli con add con-name [connection name] autoconnect no type ethernet ifname eth1 ip4 10.0.0.2 gw4 10.0.0.1
+    # nmcli con add con-name [connection name] type ethernet ifname eth1 ip4 10.0.0.2 gw4 10.0.0.1
 
 Static IP with DNS
 
-    # nmcli connection add con-name eth0 type ethernet ifname enp0s8 ip4 10.0.2.3/24 gw4 10.0.2.2 ipv4.dns 8.8.8.8  
-    Connection 'eth0' (ebca0337-945e-4b63-957b-bd0da2e65232) successfully added.
+    # nmcli connection add con-name [connection name] type ethernet ifname eth1 ip4 10.0.2.3/24 gw4 10.0.2.2 ipv4.dns 8.8.8.8
 
 **Common options:**
 - autoconnect - Connection comes up automatically at boot
@@ -146,13 +188,17 @@ Static IP with DNS
 
 ### Modify Connection
 
+Change the default IP
+
+    # nmcli connection modify eth1 ipv4.addresses 10.0.2.5/24
+
+Add a secondary IP
+
+    # nmcli connection modify eth1 +ipv4.addresses 10.0.2.4/24
+
 Delete secondary IP for connection
 
-    # nmcli connection modify eth1 -ipv4.addresses 10.0.2.4/32
-
-Delete IP and GW
-
-    # nmcli connection modify eth1 -ipv4.addresses 10.0.3.15/24 -ipv4.gateway 10.0.3.0/24
+    # nmcli connection modify eth1 -ipv4.addresses 10.0.2.4
 
 Restart the interface
 
@@ -178,7 +224,7 @@ Delete "Wired connection 1"
     # nmcli connection delete "Wired connection 1"
     Connection 'Wired connection 1' (573da91e-f3a4-3022-8d8a-f50724cba81b) successfully deleted.
 
-### Adding new IPv6 Connections
+### Adding IPv6 Connections
 
 You can use an IPv4 address as part of an IPv6 address to make it easier to understand things
 
@@ -257,5 +303,6 @@ Deleting the IP
 #### Additional Info:
 
 [Configure IPv4 addresses and perform basic IPv4 troubleshooting](https://www.certdepot.net/rhel7-configure-ipv4-addresses/)
+
 ---
 [⬅️ Back](7-manage-basic-networking.md)
