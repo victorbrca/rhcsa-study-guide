@@ -4,7 +4,7 @@ This repo serves as a community study guide for anyone that wants to study for t
 
 Please adhere to the guidelines, and most importantly, Red Hat's NDA.
 
-**Current Version:** RHCSA v8 _(with container objectives)_
+**Current Version:** RHCSA v9 + v8 (_with container objectives_). Objectives which do not overlap are prefixed with RHCSA9 and RHCSA8 respectively.
 
 ## How to use
 
