@@ -5,7 +5,7 @@
 + [6.c Configure systems to boot into a specific target automatically](6c-configure-systems-to-boot-into-a-specific-target-automatically.md)
 + [6.d Configure time service clients](6d-configure-time-service-clients.md)
 + [6.e Install and update software packages from Red Hat Network, a remote repository, or from the local file system](6e-install-and-update-software-packages-from-red-hat-network-a-remote-repository-or-from-the-local-file-system.md)
-+ [6.f Work with package module streams](6f-work-with-package-module-streams.md)
++ [6.f.RHEL8 Work with package module streams](6f-RHEL8-work-with-package-module-streams.md)
 + [6.g Modify the system bootloader](6g-modify-the-system-bootloader.md)
 
 

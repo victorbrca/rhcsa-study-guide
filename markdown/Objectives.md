@@ -28,7 +28,7 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 + 2.b Use Looping constructs (for, etc.) to process file, command line input
 + 2.c Process script inputs ($1, $2, etc.)
 + 2.d Processing output of shell commands within a script
-+ 2.e Processing shell command exit codes
++ 2.e.RHEL8 Processing shell command exit codes
 
 ### [3. Operate running systems](3-Operate-running-systems/3-Operate-running-systems.md)
 
@@ -56,11 +56,13 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 
 + [5.a Create, mount, unmount, and use vfat, ext4, and xfs file systems](5-Create-and-configure-file-systems/5a-create-mount-unmount-and-use-vfat-ext4-and-xfs-file-systems.md)
 + [5.b Mount and unmount network file systems using NFS](5-Create-and-configure-file-systems/5b-mount-and-unmount-network-file-systems-using-nfs.md)
-+ [5.c Extend existing logical volumes](5-Create-and-configure-file-systems/5c-extend-existing-logical-volumes.md)
-+ [5.d Create and configure set-GID directories for collaboration](5-Create-and-configure-file-systems/5d-create-and-configure-set-gid-directories-for-collaboration.md)
-+ [5.e Configure disk compression](5-Create-and-configure-file-systems/5e-configure-disk-compression.md)
-+ [5.f Manage layered storage](5-Create-and-configure-file-systems/5f-manage-layered-storage.md)
++ [5.c.RHEL9 Configure Autofs](5-Create-and-configure-file-systems/5c-RHEL9-configure-autofs.md)
++ [5.d Extend existing logical volumes](5-Create-and-configure-file-systems/5d-extend-existing-logical-volumes.md)
++ [5.e Create and configure set-GID directories for collaboration](5-Create-and-configure-file-systems/5e-create-and-configure-set-gid-directories-for-collaboration.md)
++ [5.e.RHEL8 Configure disk compression](5-Create-and-configure-file-systems/5e-RHEL8-configure-disk-compression.md)
++ [5.f.RHEL8 Manage layered storage](5-Create-and-configure-file-systems/5f-RHEL8-manage-layered-storage.md)
 + [5.g Diagnose and correct file permission problems](5-Create-and-configure-file-systems/5g-diagnose-and-correct-file-permission-problems.md)
+
 
 ### [6. Deploy, configure, and maintain systems](6-deploy-configure-and-maintain-systems/6-deploy-configure-and-maintain-systems.md)
 
@@ -69,8 +71,9 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 + [6.c Configure systems to boot into a specific target automatically](6-deploy-configure-and-maintain-systems/6c-configure-systems-to-boot-into-a-specific-target-automatically.md)
 + [6.d Configure time service clients](6-deploy-configure-and-maintain-systems/6d-configure-time-service-clients.md)
 + [6.e Install and update software packages from Red Hat Network, a remote repository, or from the local file system](6-deploy-configure-and-maintain-systems/6e-install-and-update-software-packages-from-red-hat-network-a-remote-repository-or-from-the-local-file-system.md)
-+ [6.f Work with package module streams](6-deploy-configure-and-maintain-systems/6f-work-with-package-module-streams.md)
++ [6.f.RHEL8 Work with package module streams](6-deploy-configure-and-maintain-systems/6f-RHEL8-work-with-package-module-streams.md)
 + [6.g Modify the system bootloader](6-deploy-configure-and-maintain-systems/6g-modify-the-system-bootloader.md)
+
 
 ### [7. Manage basic networking](7-manage-basic-networking/7-manage-basic-networking.md)
 
@@ -89,24 +92,27 @@ RHCSA exam candidates should be able to accomplish the tasks below without assis
 ### [9. Manage security](9-Manage-security/9-manage-security.md)
 
 + [9.a Configure firewall settings using firewall-config, firewall-cmd, or iptables](9-Manage-security/9a-configure-firewall-settings-using-firewall-config-firewall-cmd-or-iptables.md)
-+ [9.b Create and use file access control lists](9-Manage-security/9b-create-and-use-file-access-control-lists)
++ [9.b.RHEL8 Create and use file access control lists](9-Manage-security/9b-RHEL8-create-and-use-file-access-control-lists.md)
++ [9.b.RHEL9 Manage default file permissions](9-Manage-security/9b-RHEL9-manage-default-file-permissions.md)
 + [9.c Configure key-based authentication for SSH](9-Manage-security/9c-configure-key-based-authentication-for-ssh.md)
 + [9.d Set enforcing and permissive modes for SELinux](9-Manage-security/9d-set-enforcing-and-permissive-modes-for-selinux.md)
 + [9.e List and identify SELinux file and process context](9-Manage-security/9e-list-and-identify-selinux-file-and-process-context.md)
++ [9.ex.RHEL9 Manage SELinux Ports](9-Manage-security/9ex-rhel9-manage-selinux-ports.md)
 + [9.f Restore default file contexts](9-Manage-security/9f-restore-default-file-contexts.md)
 + [9.g Use boolean settings to modify system SELinux settings](9-Manage-security/9g-use-boolean-settings-to-modify-system-selinux-settings.md)
 + [9.h Diagnose and address routine SELinux policy violations](9-Manage-security/9h-diagnose-and-address-routine-selinux-policy-violations.md)
+
 
 ### [10. Manage containers](10-manage-containers/10-manage-containers.md)
 
 + [10.a Find and retrieve container images from a remote registry](10-manage-containers/10a-find-and-retrieve-container-images-from-a-remote-registry.md)
 + [10.b Inspect container images](10-manage-containers/10b-inspect-container-images.md)
 + [10.c Perform container management using commands such as podman and skopeo](10-manage-containers/10c-perform-container-management-using-commands-such-as-podman-and-skopeo.md)
++ [10.cx.RHEL9 Build a container from a Containerfile](10-manage-containers/10cx-RHEL9-build-a-container-from-a-containerfile.md)
 + [10.d Perform basic container management such as running, starting, stopping, and listing running containers](10-manage-containers/10d-perform-basic-container-management-such-as-running-starting-stopping-and-listing-running-containers.md)
 + [10.e Run a service inside a container](10-manage-containers/10e-run-a-service-inside-a-container.md)
 + [10.f Configure a container to start automatically as a systemd service](10-manage-containers/10f-configure-a-container-to-start-automatically-as-a-systemd-service.md)
 + [10.g Attach persistent storage to a container](10-manage-containers/10g-attach-persistent-storage-to-a-container.md)
-
 
 ---
 [⬅️ Back](../README.md)
