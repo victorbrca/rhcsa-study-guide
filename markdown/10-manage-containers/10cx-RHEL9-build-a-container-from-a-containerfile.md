@@ -33,10 +33,13 @@ This image can then be run through a `docker run` command. It is advisable to sp
 ```
 
 ## Writing a Containerfile
+
 Red Hat provides a [_universal basic image_](https://access.redhat.com/articles/4238681) to base your containers from. It is recommended to use it for any container-related activities within RHEL and RHCSA.
+
 Below is a simple containerfile which pulls a standard UBI and installs a httpd server to it. 
 
 Environment:
+
 ```
 ls ~/myServer/
 index.html  Containerfile
@@ -58,10 +61,10 @@ CMD httpd -D FOREGROUND
 
 You can now build and run the Containerfile as shown above.
 
-**📝 NOTE:** *In a way, a Containerfile is just a glorified shell script. This flexibility allows developers to build different containers which achieve the same thing. For instance, instead of copying index.html to the workdir it could be printed directly; or the httpd execution command could be written in a different way. Whichever syntax you find most comfortable is likely fine to use.*
-
+**📝 NOTE:** *A Containerfile is a configuration file that automates the steps of creating a container image. It is similar to a Makefile. This flexibility allows developers to build different containers which achieve the same thing. For instance, instead of copying index.html to the workdir it could be printed directly; or the httpd execution command could be written in a different way. Whichever syntax you find most comfortable is likely fine to use.*
 
 ## A word on Buildah
-`buildah` is a utility which pre-dates Docker and Containerfiles. It works on a lower-level than `podman build`, providing finer-grained control. You can experiment with it, but for the levels of detail needed in the RHCSA learning podman and Containerfiles is likely enough. 
 
-An interesting apsect of buildah is that it can interactively build a container line-by-line - allowing for trial and error. In production, however, these buildah command are written into a shell script and look similar to a Containerfile anyway. A section of [this article](https://developers.redhat.com/blog/2019/02/21/podman-and-buildah-for-docker-users#) is dedicated to buildah and explains it well.
+`Buildah` is a utility which pre-dates Docker and Containerfiles. It works on a lower-level than `podman build`, providing finer-grained control. You can experiment with it, but for the levels of detail needed in the RHCSA learning podman and Containerfiles is likely enough. 
+
+An interesting apsect of Buildah is that it can interactively build a container line-by-line - allowing for trial and error. In production, however, these buildah command are written into a shell script and look similar to a Containerfile anyway. A section of [this article](https://developers.redhat.com/blog/2019/02/21/podman-and-buildah-for-docker-users#) is dedicated to Buildah and explains it well.
