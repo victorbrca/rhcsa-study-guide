@@ -1,4 +1,4 @@
-likely# 3.c Interrupt the boot process in order to gain access to a system
+# 3.c Interrupt the boot process in order to gain access to a system
 
 ## Rescue Modes
 
