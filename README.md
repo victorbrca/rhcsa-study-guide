@@ -8,7 +8,7 @@ Please adhere to the guidelines, and most importantly, Red Hat's NDA.
 
 ## How to use
 
-As a study guide it makes more sense to digest the content via your web browser. You can access it at the [Objectives](markdown/Objectives.md) page.
+As a study guide it makes more sense to digest the content via your web browser. You can access it at the [Objectives](markdown/Objectives.md) page or via the official web site https://rhcsa-study-guide.org.
 
 If you want to edit the content, start by reviewing the [rules](markdown/Rules.md). After you can choose to edit the contents by following the proper procedure for contributing changes to a Git Hub repository (if you are not familiar with the Git Hub process you can find simple instructions [here](https://kbroman.org/github_tutorial/pages/fork.html)), or by creating a Git Hub [issue](https://github.com/victorbrca/rhcsa-study-guide/issues/new/choose).
 
@@ -39,3 +39,11 @@ The current objectives for the exam (in enumerated list). This is where you can 
 This page will provide you additional resources that will greatly help with your study. Resources include instructional videos, environments, labs and much more.
 
 [Additional Resources](markdown/Additional-Resources.md)
+
+## Author
+
+**Victor Mendonça**
+
++ Site - [Victor Mendonça](https://victormendonca.com/)
++ GitHub - [victorbrca](https://github.com/victorbrca)
++ Twitter - [@victorbrca](https://twitter.com/victorbrca)
