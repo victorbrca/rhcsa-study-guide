@@ -107,13 +107,13 @@ SGID permission is similar to the SUID permission, only difference is – when t
 **📝 NOTE:** *A capital 'S' (`-rwxr-Sr--`) indicates that the execute bit is not set*
 
 
-### Sticky bit  
+### Sticky bit
 
 Anyone can write, but only owner can delete the files (like '/tmp').
 
     drwxrwxrwt
 
-Sticky bit is usually set on directories. Setting the sticky bit on a folder does nothing (on Linux).
+Sticky bit is usually set on directories. Setting the sticky bit on a file does nothing (on Linux).
 
 #### Setting sticky bit
 
@@ -124,6 +124,7 @@ Sticky bit is usually set on directories. Setting the sticky bit on a folder doe
     drwxrwxrwt. 1 root root 0 Mar 16 21:48 testdir
 
 **📝 NOTES:**
+
 + A capital 'T' indicates that the execute bit is not set
 + You should give write permission to make sure that the target users can write to the folder
 
@@ -142,7 +143,7 @@ Additional Special Permissions
 
 A '.' can represent special permissions (SELinux related).
 
-    -rw-rw-rw-.  
+    -rw-rw-rw-.
 
 A '+' indicates ACLs are applied.
 
