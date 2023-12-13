@@ -1,5 +1,5 @@
-Objectives
-===
+# Objectives
+
 [Red Hat Certified System Administrator (RHCSA) exam - EX200](https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam?section=Objectives#Objectives)
 
 ## Study points for the exam.
